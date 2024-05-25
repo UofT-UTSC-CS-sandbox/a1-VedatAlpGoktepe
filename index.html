@@ -18,26 +18,21 @@
   
   <br>
 
+  <div class="image-display">
+  </div>
   <div class="posts">
-    <div class="image-display">
-      <!-- <div class="image-post" id="imageId">
-        <img class="display-image image" src="media/placeholder.png" alt="Placeholder Image">
-        <div class="title">Image Title</div>
-        <div class="subtext">Image Author</div>
-      </div> -->
-    </div>
     <br>
     <button class="btn" id="prevImage">Previous</button>
     <button class="btn" id="nextImage">Next</button>
     <button class="btn" id="delImage">Delete</button>
-    <div class="subtext">Total Image #</div>
+    <div class="subtext" id="imageCounter">Total Image #</div>
     
     <br>
   
     <div class="comment-form">
-      <form class="form-inputs">
+      <form class="form-inputs" id="addCommentForm">
         <input type="text" name="author" placeholder="Your Name">
-        <input type="text" name="comment" placeholder="Your Comment">
+        <input type="text" name="content" placeholder="Your Comment">
         <button class="btn" type="submit">Submit</button>
       </form>
     </div>
@@ -45,17 +40,17 @@
     <br>
   
     <div class="comment-display">
-      <div class="comment">
+      <!-- <div class="comment" id="commentID">
         <div class="author">Comment Author</div>
         <div class="subtext">Post Date</div>
         <div class="comment-text">Comment Text</div>
-        <button class="btn delete-comment" type="submit">Delete</button>
-      </div>
+        <button class="btn delete-comment" id="delComment" type="submit">Delete</button>
+      </div> -->
     </div>
     
     <br>
   
-    <button class="btn" id="previousComment" type="submit">Previous</button>
+    <button class="btn" id="prevComment" type="submit">Previous</button>
     <button class="btn" id="nextComment" type="submit">Next</button>
   </div>
 

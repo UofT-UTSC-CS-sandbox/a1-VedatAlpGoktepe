@@ -29,11 +29,11 @@ let apiService = (function () {
   // if image/comment exists, start the ID from the max existing ID + 1
   var curImgID = 1;
   if (images.length !== 0) {
-    curImgID = Math.max(images.map((img) => {img.imageId})) + 1;
+    curImgID = images[0].imageId + 1;
   }
   var curCmtID = 1;
-  if (images.length !== 0) {
-    curCmtID = Math.max(comments.map((cmt) => {cmt.commentId})) + 1;
+  if (comments.length !== 0) {
+    curCmtID = comments[0].commentId + 1;
   }
 
   // add an image to the gallery
@@ -45,6 +45,7 @@ let apiService = (function () {
       url: url,
       date: new Date(),
     };
+    curImgID++;
     images.unshift(newImage);
     localStorage.setItem("images", JSON.stringify(images));
   };
@@ -77,24 +78,35 @@ let apiService = (function () {
       date: new Date(),
     };
     comments.unshift(newComment);
+    curCmtID++;
     localStorage.setItem("comments", JSON.stringify(comments));
   };
 
   // delete a comment to an image
   module.deleteComment = function (commentId) {
-    const index = comments.indexOf(commentId);
+    const index = comments.findIndex((cmt) => cmt.commentId == commentId);
     if (index > -1) {
       comments.splice(index, 1);
     }
     localStorage.setItem("comments", JSON.stringify(comments));
   };
 
+  // delete all comments for an image
+  module.deleteAllComments = function (imageId) {
+    comments = comments.filter((comment) => comment.imageId != imageId);
+    localStorage.setItem("comments", JSON.stringify(comments));
+  };
+
   // get limit comments for imageId starting from page*limit
   module.getComments = function (imageId, page=0, limit=10) {
     return comments
-      .filter((comment) => comment.imageId === imageId)
+      .filter((comment) => comment.imageId == imageId)
       .slice(page * limit, (page + 1) * limit);
-  } 
+  };
+
+  module.getNumComments = function (imageId) {
+    return comments.filter((comment) => comment.imageId == imageId).length;
+  }
 
   return module;
 })();
