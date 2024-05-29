@@ -1,4 +1,6 @@
 let apiService = (function () {
+  "use strict";
+
   let module = {};
 
   /*  ******* Data types *******

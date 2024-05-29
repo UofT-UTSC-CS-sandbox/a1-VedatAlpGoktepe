@@ -20,6 +20,21 @@
         return;
       }
 
+      if (apiService.getNumImages() <= 1) {
+        document.querySelector("#imageButtons").style.display = "none";
+      } else {
+        document.querySelector("#imageButtons").style.display = "flex";
+      }
+      if (page == apiService.getNumImages() - 1) {
+        document.querySelector("#prevImage").setAttribute("disabled", true);
+      } else {
+        document.querySelector("#prevImage").removeAttribute("disabled");
+      }
+      if (page == 0) {
+        document.querySelector("#nextImage").setAttribute("disabled", true);
+      } else {
+        document.querySelector("#nextImage").removeAttribute("disabled");
+      }
       posts.style = "";
       imageNav.style = "";
       imageCounter.style = "";
@@ -62,14 +77,14 @@
         document.querySelector("#commentButtons").style.display = "flex";
       }
       if (cmtPage == 0) {
-        document.querySelector("#prevComment").style.display = "none";
+        document.querySelector("#prevComment").setAttribute("disabled", true);
       } else {
-        document.querySelector("#prevComment").style.display = "flex";
+        document.querySelector("#prevComment").removeAttribute("disabled");
       }
       if (cmtPage == Math.ceil(apiService.getNumComments(imageId) / 10) - 1) {
-        document.querySelector("#nextComment").style.display = "none";
+        document.querySelector("#nextComment").setAttribute("disabled", true);
       } else {
-        document.querySelector("#nextComment").style.display = "flex";
+        document.querySelector("#nextComment").removeAttribute("disabled");
       }
       commentDisplay.innerHTML = "";
       comments.forEach(function (comment) {
