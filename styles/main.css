@@ -1,0 +1,181 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #2d2d2d;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+#title {
+  color: white;
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+.center-content {
+  text-align: center;
+}
+
+.section {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #bebebe;
+}
+
+button.btn {
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button.btn:hover {
+  background-color: #4e4e4e;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input[type="text"] {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+  font-size: 1rem;
+  max-width: 300px;
+}
+
+form button[type="submit"] {
+  margin-top: 0.5rem;
+}
+
+.image-display {
+  padding: 0.5rem 0 0 0;
+  margin: 1rem 0 0 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.image-post {
+  margin-bottom: 1rem;
+}
+
+.image-post img.display-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.posts {
+  padding: 0.5rem 0 0 0;
+}
+
+.center-content.section.posts {
+  margin-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.subtext {
+  margin: 1rem 0;
+  color: #525252;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.comment-form {
+  margin: 1rem 0;
+}
+
+.comment-display {
+  background-color: #e9e9e9;
+  padding: 1rem;
+}
+
+.comment {
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  background-color: #fff;
+  border: 1px solid #bebebe;
+}
+
+.comment-info {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.author {
+  flex-grow: 1;
+  text-align: left;
+}
+.date {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.comment-text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: left;
+}
+
+button.btn.delete:hover {
+  background-color: rgb(190, 2, 2);
+}
+
+.comment-delete {
+  text-align: right;
+}
+
+#commentButtons {
+  margin-top: 1rem;
+}
+
+@media (min-width: 600px) {
+  .center-content {
+    max-width: 600px;
+    margin: 1rem auto 0 auto;
+  }
+
+  .button-group {
+    flex-wrap: nowrap;
+  }
+
+  form input[type="text"] {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .center-content {
+    max-width: 750px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .center-content {
+    max-width: 900px;
+  }
+}

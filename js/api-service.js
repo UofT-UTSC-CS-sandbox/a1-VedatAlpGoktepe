@@ -60,7 +60,7 @@ let apiService = (function () {
   };
 
   // get limit images from the gallery starting from page*limit
-  module.getImages = function (page=0, limit=1) {
+  module.getImages = function (page = 0, limit = 1) {
     return images.slice(page * limit, (page + 1) * limit);
   };
 
@@ -75,7 +75,7 @@ let apiService = (function () {
       imageId: imageId,
       author: author,
       content: content,
-      date: new Date(),
+      date: new Date().toLocaleDateString("en-CA"),
     };
     comments.unshift(newComment);
     curCmtID++;
@@ -98,7 +98,7 @@ let apiService = (function () {
   };
 
   // get limit comments for imageId starting from page*limit
-  module.getComments = function (imageId, page=0, limit=10) {
+  module.getComments = function (imageId, page = 0, limit = 10) {
     return comments
       .filter((comment) => comment.imageId == imageId)
       .slice(page * limit, (page + 1) * limit);
@@ -106,7 +106,7 @@ let apiService = (function () {
 
   module.getNumComments = function (imageId) {
     return comments.filter((comment) => comment.imageId == imageId).length;
-  }
+  };
 
   return module;
 })();

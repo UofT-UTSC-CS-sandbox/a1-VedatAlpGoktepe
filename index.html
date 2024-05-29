@@ -1,60 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>The Web Gallery</title>
-  <link rel="stylesheet" type="text/css" href="styles/cols.css">
-</head>
+  <head>
+    <title>The Web Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles/cols.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
 
-<body>
-  <h1>The Web Gallery</h1>
+  <body>
+    <header>
+      <a href="/" id="title">The Web Gallery</a>
+    </header>
 
-  <button class="btn" id="toggleAddForm" type="submit">Hide Add Image Form</button>
-  <form id="addImageForm">
-    <input type="text" name="title" placeholder="Image Title">
-    <input type="text" name="author" placeholder="Image Author">
-    <input type="text" name="url" placeholder="Image URL">
-    <button class="btn" type="submit">Add Image</button>
-  </form>
-  
-  <br>
-
-  <div class="image-display">
-  </div>
-  <div class="posts">
-    <br>
-    <button class="btn" id="prevImage">Previous</button>
-    <button class="btn" id="nextImage">Next</button>
-    <button class="btn" id="delImage">Delete</button>
-    <div class="subtext" id="imageCounter">Total Image #</div>
-    
-    <br>
-  
-    <div class="comment-form">
-      <form class="form-inputs" id="addCommentForm">
-        <input type="text" name="author" placeholder="Your Name">
-        <input type="text" name="content" placeholder="Your Comment">
-        <button class="btn" type="submit">Submit</button>
+    <div class="center-content">
+      <button class="btn" id="toggleAddForm" type="submit">
+        Hide Add Image Form
+      </button>
+      <form id="addImageForm">
+        <input type="text" name="title" placeholder="Image Title" />
+        <input type="text" name="author" placeholder="Image Author" />
+        <input type="text" name="url" placeholder="Image URL" />
+        <button class="btn" type="submit">Add Image</button>
       </form>
     </div>
-  
-    <br>
-  
-    <div class="comment-display">
-      <!-- <div class="comment" id="commentID">
-        <div class="author">Comment Author</div>
-        <div class="subtext">Post Date</div>
-        <div class="comment-text">Comment Text</div>
-        <button class="btn delete-comment" id="delComment" type="submit">Delete</button>
-      </div> -->
-    </div>
-    
-    <br>
-  
-    <button class="btn" id="prevComment" type="submit">Previous</button>
-    <button class="btn" id="nextComment" type="submit">Next</button>
-  </div>
 
-  <script src="js/api-service.js"></script>
-  <script src="js/index.js"></script>
-</body>
+    <div class="center-content section">
+      <div class="subtext" id="imageCounter">Total Image #</div>
+      <div class="image-display"></div>
+      <div class="button-group">
+        <button class="btn" id="prevImage">Previous</button>
+        <button class="btn" id="nextImage">Next</button>
+        <button class="btn delete" id="delImage">Delete</button>
+      </div>
+    </div>
+
+    <div class="center-content section posts">
+      <div class="center-content">
+        <div class="comment-form">
+          <form class="form-inputs" id="addCommentForm">
+            <input type="text" name="author" placeholder="Your Name" />
+            <input type="text" name="content" placeholder="Your Comment" />
+            <button class="btn" type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div class="comment-display"></div>
+
+        <div class="button-group" id="commentButtons">
+          <button class="btn" id="prevComment" type="submit">Previous</button>
+          <button class="btn" id="nextComment" type="submit">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/api-service.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
