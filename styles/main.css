@@ -16,6 +16,7 @@ header {
   text-align: center;
 }
 
+/* website top bar */
 #title {
   color: white;
   text-decoration: none;
@@ -26,6 +27,7 @@ header {
   text-align: center;
 }
 
+/* put in a box */
 .section {
   padding: 1rem;
   background-color: white;
@@ -57,6 +59,7 @@ form {
   align-items: center;
 }
 
+/* limit width/size of text inputs so they dont become too long */
 form input[type="text"] {
   margin: 0.5rem;
   padding: 0.5rem;
@@ -69,29 +72,45 @@ form button[type="submit"] {
   margin-top: 0.5rem;
 }
 
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* big text */
+.big-title {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
 .image-display {
   padding: 0.5rem 0 0 0;
   margin: 1rem 0 0 0;
 }
 
+/* image title/author title */
 .title {
   font-size: 1.25rem;
   margin: 0.5rem 0;
 }
 
+/* image surrounding */
 .image-post {
   margin-bottom: 1rem;
 }
 
+/* actual image */
 .image-post img.display-image {
   max-width: 100%;
   height: 360px;
 }
 
+/* comments */
 .posts {
   padding: 0.5rem 0 0 0;
 }
 
+/* margin under comment section to have some space at the end of the page */
 .center-content.section.posts {
   margin-bottom: 2rem;
 }
@@ -118,6 +137,7 @@ form button[type="submit"] {
   padding: 1rem;
 }
 
+/* style of each comment */
 .comment {
   padding: 1rem;
   margin: 0 0 1rem 0;
@@ -125,12 +145,14 @@ form button[type="submit"] {
   border: 1px solid #bebebe;
 }
 
+/* author and date style */
 .comment-info {
   display: flex;
   font-weight: bold;
   font-size: 1.05rem;
 }
 
+/* author and date alignment */
 .author {
   flex-grow: 1;
   text-align: left;
@@ -140,6 +162,7 @@ form button[type="submit"] {
   text-align: right;
 }
 
+/* comment content style */
 .comment-text {
   margin-top: 0.5rem;
   font-size: 1rem;
@@ -153,11 +176,12 @@ button.btn.delete:hover {
 .comment-delete {
   text-align: right;
 }
-
+/* comment navigation buttons */
 #commentButtons {
   margin-top: 1rem;
 }
 
+/* styles on larger screens */
 @media (min-width: 600px) {
   .center-content {
     max-width: 600px;
